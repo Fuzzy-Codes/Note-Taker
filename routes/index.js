@@ -18,6 +18,11 @@ router.post("/notes", (req, res) => {
     res.json(createNote);
 });
 
+// BONUS
+router.delete("/notes/:id", (req, res) => {
+    readAndDelete(req.params.id, "./db/db.json");
+    res.json({message: "Note was deleted"});
+});
 
 module.exports = router;
 
